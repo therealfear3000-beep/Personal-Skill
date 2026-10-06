@@ -1,0 +1,39 @@
+name: Validate and package skill
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate skill
+        run: python scripts/validate_skill.py
+
+      - name: Test option scoring utility
+        run: python scripts/score_options.py examples/option-scoring.sample.json
+
+      - name: Package skill
+        run: python scripts/package_skill.py
+
+      - name: Upload ready-to-install ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: hr-case-competition-strategist
+          path: dist/hr-case-competition-strategist.zip
+          if-no-files-found: error
