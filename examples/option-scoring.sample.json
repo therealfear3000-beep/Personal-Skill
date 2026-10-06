@@ -1,0 +1,38 @@
+{
+  "options": [
+    {
+      "name": "Mechanism-led architecture",
+      "ratings": {
+        "problem_fit": 9,
+        "case_specificity": 9,
+        "novelty": 8,
+        "mechanism": 9,
+        "evidence": 7,
+        "impact": 9,
+        "feasibility": 7,
+        "economics": 7,
+        "adoption": 8,
+        "defensibility": 8
+      },
+      "fatal_flaws": []
+    },
+    {
+      "name": "Generic HR program bundle",
+      "ratings": {
+        "problem_fit": 6,
+        "case_specificity": 3,
+        "novelty": 3,
+        "mechanism": 4,
+        "evidence": 7,
+        "impact": 6,
+        "feasibility": 8,
+        "economics": 6,
+        "adoption": 6,
+        "defensibility": 4
+      },
+      "fatal_flaws": [
+        "Core recommendation is mostly a renamed generic HR program bundle"
+      ]
+    }
+  ]
+}
